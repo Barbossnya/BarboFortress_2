@@ -1,0 +1,10 @@
+# Исключаем ненужные файлы из Docker образа
+backup/
+*.class
+.git/
+.gitignore
+README.md
+ATTESTATION.md
+DEMONSTRATION.md
+INSTRUCTIONS.md
+FINAL_REPORT.md 

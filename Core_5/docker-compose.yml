@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  core5-app:
+    build: .
+    container_name: core5-java-app
+    volumes:
+      # Монтируем текущую директорию для сохранения результатов
+      - ./backup:/app/backup
+      - ./game_field.dat:/app/game_field.dat
+    environment:
+      - JAVA_OPTS=-Dfile.encoding=UTF-8
+    ports:
+      # Порт для возможного веб-интерфейса в будущем
+      - "8080:8080"
+    # Запускаем в интерактивном режиме для видимости вывода
+    stdin_open: true
+    tty: true
+    command: java -cp src Main 
